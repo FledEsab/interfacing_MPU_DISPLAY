@@ -1,1 +1,56 @@
-/Debug/
+# Build output directories and files
+/Debug
+/Release
+/build
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.srec
+*.axf
+*.out
+
+# STM32CubeIDE specific
+/.settings
+/.project
+/.cproject
+/*.launch
+/*.ewp
+/*.eww
+/*.ewd
+
+# STM32CubeMX generated files (if not version-controlled)
+/MX
+*.ioc.bak
+
+# IDE and editor-specific files
+/.vscode
+/.idea
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Temporary files
+*.bak
+*.tmp
+*.swp
+*.swo
+*.log
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Documentation and miscellaneous
+/docs/html
+/docs/latex
+*.pdf
+
+# Dependency directories (if using external libraries)
+/lib
+/libs
+/external
