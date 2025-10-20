@@ -61,6 +61,30 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#define MPU6050_ADDR 0xd0
+
+#define SMPLRT_DIV_REG 0x19
+#define GYRO_CONFIG_REG 0x1B
+#define ACCEL_CONFIG_REG 0x1C
+#define ACCEL_XOUT_H_REG 0x3B
+#define TEMP_OUT_H_REG 0x41
+#define GYRO_XOUT_H_REG 0x43
+#define PWR_MGMT_1_REG 0x6B
+#define WHO_AM_I_REG 0x75
+
+
+void MPU6050_Init(void){
+	uint8_t check, Data;
+	//check device ID WHO_AM_I
+	HAL_I2C_Mem_Read(&hi2c1, MPU6050 ADDR, WHO_AM_I_REG,1, &check, 1, 1000);
+
+	if(check==104) // if the device is present
+	{
+		//check power management register 0x6B we should write all zeros according to data sheet to wake up mpu
+		Data = 0;
+		HAL_I2C_Mem_Write(&hi2c1, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+	}
+}
 
 /* USER CODE END 0 */
 
