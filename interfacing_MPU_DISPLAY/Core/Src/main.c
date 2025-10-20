@@ -61,7 +61,7 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define MPU6050_ADDR 0xd0
+#define MPU6050_ADDR 0xD0
 
 #define SMPLRT_DIV_REG 0x19
 #define GYRO_CONFIG_REG 0x1B
